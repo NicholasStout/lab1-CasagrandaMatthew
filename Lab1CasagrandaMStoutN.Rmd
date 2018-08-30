@@ -1,0 +1,33 @@
+---
+title: "Lab1 CasagrandaM StoutN"
+author: "Matt Casagranda Nicholas Stout"
+date: "August 30, 2018"
+output: html_document
+---
+
+``````{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width=4, fig.height=4)
+library(tidyverse)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{gapminder_5060 <- read_csv("gapminder-5060.csv")}
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+us <- gapminder_5060 %>% filter(country == "United States")
+plot(x=us$year, y=us$gdpPercap, 
+     type = 'l', xlab = "year", ylab = "gdpPercap")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
